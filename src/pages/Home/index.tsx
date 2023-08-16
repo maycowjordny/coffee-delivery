@@ -1,6 +1,7 @@
-import { HomeContainer, AboutCoffeeDelivery, Points } from "./styles";
+import { HomeContainer, AboutCoffeeDelivery, Points, Menu } from "./styles";
 import { ShoppingCartSimple, Timer, Package, Coffee } from "phosphor-react";
 import CoffeeImage from "../../assets/Imagem.svg"
+import { Card } from "../../Componentes/Card";
 
 export function Home() {
   return (
@@ -38,7 +39,26 @@ export function Home() {
           <img src={CoffeeImage} alt="imagem de um copo de café" />
         </div>
       </AboutCoffeeDelivery>
+      <Menu>
+        <div className="title">
 
+          <h2>Nossos cafés</h2>
+        </div>
+        <section>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </section>
+      </Menu>
     </HomeContainer>
   )
 }

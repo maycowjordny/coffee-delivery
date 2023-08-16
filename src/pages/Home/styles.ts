@@ -1,8 +1,7 @@
 import { styled } from "styled-components";
 
 export const HomeContainer = styled.div`
-
-padding:5rem 10rem 0;
+padding:5rem 10rem 10rem;
 `;
 
 export const AboutCoffeeDelivery = styled.div`
@@ -27,13 +26,15 @@ color: ${props => props.theme.BACKGROUND_BASE_TITLE};
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
+    max-width:32.1rem;
 }
 
 .icons-wrapper {
-    margin-top: 1rem;
+    margin-top: 4rem;
     display: flex;
     align-items: center;
     gap: 3.5rem;
+    margin-bottom: 8.75rem;
 }
 
 .box-icons{
@@ -77,4 +78,23 @@ export const Points = styled.span<PointsProps>`
     border-radius: 50%;
     background: ${props => props.theme[STATUS_COLOR[props.pointscolor]]};
 
+`;
+
+export const Menu = styled.main`
+
+section{
+    display: flex;
+    flex-wrap:wrap;
+    gap: 2rem;
+    
+}
+.title h2{
+    font-family: 'Baloo 2';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 130%;
+    color: ${props => props.theme.BACKGROUND_BASE_SUBTITLE};
+    margin-bottom: 2.12rem;
+   }
 `;
