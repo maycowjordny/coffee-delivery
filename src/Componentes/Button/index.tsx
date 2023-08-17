@@ -1,9 +1,18 @@
+import { ReactNode } from "react"
 import { ButtonContainer } from "./styles"
 
-export function Button() {
-    return (
-        <ButtonContainer>
+interface ButtonProps {
+    variant?: any
+    title: string
+    icon: ReactNode
+}
 
+export function Button(props: ButtonProps) {
+
+    return (
+        <ButtonContainer variant={props.variant} {...props} >
+            {props.icon}
+            {props.title}
         </ButtonContainer>
     )
 }

@@ -77,7 +77,6 @@ export const Points = styled.span<PointsProps>`
     padding: 0.5rem;
     border-radius: 50%;
     background: ${props => props.theme[STATUS_COLOR[props.pointscolor]]};
-
 `;
 
 export const Menu = styled.main`
