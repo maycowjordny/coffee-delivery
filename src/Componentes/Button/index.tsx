@@ -4,7 +4,8 @@ import { ButtonContainer } from "./styles"
 interface ButtonProps {
     variant?: any
     title: string
-    icon: ReactNode
+    icon?: ReactNode
+    id?: string
 }
 
 export function Button(props: ButtonProps) {

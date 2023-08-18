@@ -14,7 +14,7 @@ body{
 }
 
 body, input, button, textarea {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     font-size: 1rem;
     outline: none;
     }

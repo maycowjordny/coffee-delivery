@@ -3,8 +3,9 @@ import { styled } from "styled-components";
 export const OrderContainer = styled.div`
 width: 100%;
 display: flex;
+justify-content: space-between;
 padding:2.5rem 10rem 10rem;
-
+gap: 2rem;
 
 h2{
     font-family: 'Baloo 2';
@@ -13,6 +14,14 @@ h2{
     line-height: 130%;
     color: ${props => props.theme.BACKGROUND_BASE_SUBTITLE};
 }
+
+
+
+@media(max-width:1400px){
+    flex-direction: column;
+    align-items: center;
+    padding:1rem ;
+}
 `;
 
 export const BaseSection = styled.div`
@@ -20,12 +29,10 @@ export const BaseSection = styled.div`
 padding: 2.5rem;
 background-color:${props => props.theme.BACKGROUND_BASE_CARD};
 font-family: 'Roboto';
-
 `;
 
 export const AddressAndPayment = styled.div`
- width: 40rem;
- 
+    max-width: 35rem;
 `;
 
 export const AdressWrapper = styled(BaseSection)`
@@ -87,7 +94,7 @@ export const PaymentWrapper = styled(BaseSection)`
     margin-top: 1rem;
     height: 13rem;
     border-radius: 0.375rem;
-
+    padding:2.5rem;
     
     .title{
         display: flex;
@@ -99,7 +106,6 @@ export const PaymentWrapper = styled(BaseSection)`
         flex-direction: column;
         gap: 0.12rem;
         font-family: 'Roboto';
-        margin-bottom: 1rem;
         p{
             font-size: 1rem;
             font-weight: 400;
@@ -112,31 +118,70 @@ export const PaymentWrapper = styled(BaseSection)`
             font-weight: 400;
             line-height: 130%;
             color: ${props => props.theme.BACKGROUND_BASE_TEXT};
+            margin-bottom:2rem;
         }
     }
 
-    div:nth-child(2){
+    .buttons-payment{
         display: flex;
         gap:0.75rem;
-        
     }
 
 `;
 
 export const OrdersDetails = styled.div`
-width: 28rem;
-
-h2{
-    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 23rem;
+    border-radius: 0.375rem;
+    max-width: 28rem;
+    .order-wrapper{
+        padding: 2.5rem;
+        border-radius: 0.375rem 2.75rem;
+        background-color:${props => props.theme.BACKGROUND_BASE_CARD};
 }
-.order-wrapper{
-    margin-top:0.94rem;
-    margin-left: 2rem;
-    padding: 2.5rem;
-    background-color:${props => props.theme.BACKGROUND_BASE_CARD};
-    border-radius: 0.375rem 2.75rem;
+
+.payment-details div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    p{
+        color:${props => props.theme.BACKGROUND_BASE_TEXT};
+        font-family: 'Roboto';
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    strong{
+        color:${props => props.theme.BACKGROUND_BASE_SUBTITLE};
+        font-family:'Roboto';
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 130%; 
+    }
 }
 
+    #button-confirm-order{
+    width: 100%;
+    height: 2.8rem;
+    border: none;
+    display: flex;
+    padding: 0.75rem 0.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 0.375rem;
+    background-color:${props => props.theme.YELLOW}; 
+    color:${props => props.theme.WHITE};
+    font-family: 'Roboto';
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%; 
+    text-transform: uppercase;
+}
 `;
 
 export const Input = styled.input`
@@ -155,6 +200,9 @@ background-color:${props => props.theme.BACKGROUND_BASE_INPUT};
     color: ${props => props.theme.BACKGROUND_BASE_LABEL};
 }
 `;
+
+
+
 
 
 

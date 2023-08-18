@@ -1,6 +1,7 @@
 import { Button } from "../../Componentes/Button";
 import { AddressAndPayment, AdressWrapper, Input, OrderContainer, OrdersDetails, PaymentWrapper } from "./styles";
-import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import { CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
+import { OrderDetails } from "../../Componentes/OrderDetails"
 
 export function Order() {
   return (
@@ -29,23 +30,40 @@ export function Order() {
         </AdressWrapper>
         <PaymentWrapper>
           <div className="title">
-            <CurrencyDollar size={18} color="#C47F17" />
-            <div>
+            <CurrencyDollar size={18} color="#8047F8" />
+            <div className="info-payment">
               <p>Pagamento</p>
               <h3>O pagamento é feito na entrega. Escolha a forma que deseja pagar</h3>
             </div>
           </div>
-          <div>
-            <Button variant="secundary" title="Cartão de crédito" icon={<CurrencyDollar />} />
-            <Button variant="ButtonPayment" title="cartão de débito" icon={<CurrencyDollar />} />
-            <Button variant="secundary" title="dinheiro" icon={<CurrencyDollar />} />
+          <div className="buttons-payment">
+            <Button variant="ButtonPayment" title="Cartão de crédito" icon={<CurrencyDollar size={16} color="#8047F8" />} />
+            <Button variant="ButtonPayment" title="cartão de débito" icon={<CreditCard size={16} color="#8047F8" />} />
+            <Button variant="ButtonPayment" title="dinheiro" icon={<Money size={16} color="#8047F8" />} />
           </div>
         </PaymentWrapper>
       </AddressAndPayment>
       <OrdersDetails>
         <h2>Cafés selecionados</h2>
         <div className="order-wrapper">
-
+          <OrderDetails />
+          <OrderDetails />
+          <OrderDetails />
+          <div className="payment-details">
+            <div>
+              <p>Total de itens </p>
+              <p>R$ 29,70 </p>
+            </div>
+            <div>
+              <p>Entrega </p>
+              <p>R$ 3,50 </p>
+            </div>
+            <div>
+              <strong>Total</strong>
+              <strong>R$ 33,20</strong>
+            </div>
+            <button id="button-confirm-order">confirmar pedido</button>
+          </div>
         </div>
       </OrdersDetails>
     </OrderContainer>

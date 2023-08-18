@@ -12,6 +12,7 @@ export function Header() {
                 <button> <MapPin size={22} color="#8047f8" weight="fill" />Porto Alegre, RS</button>
                 <NavLink to="/order" title="Pedido">
                     <ShoppingCartSimple size={22} color="#c47f17" weight="fill" />
+                    <span>{2}</span>
                 </NavLink>
             </nav>
         </HeaderContainer>
