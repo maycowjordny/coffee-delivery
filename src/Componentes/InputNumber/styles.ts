@@ -1,19 +1,27 @@
 import { styled } from "styled-components";
 
-export const InputNumberContainer = styled.div`
+interface InputNumberContainer {
+  variant: 'InputNumberHome' | 'InputNumberOrder'
+}
+
+export const InputNumberContainer = styled.div<InputNumberContainer>`
 display: flex;
 align-items: center;
-padding: 0.6rem;
+padding: ${props => props.variant === 'InputNumberHome' ? '0.5rem' : '0.2rem'};
 background-color: ${props => props.theme.BACKGROUND_BASE_BUTTON};
 border-radius: 0.375rem;
 
 
-button{
+.buttonInput{
   display: flex;
   align-items: center;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+button{
   border: none;
   background-color: ${props => props.theme.BACKGROUND_BASE_BUTTON};
-  border-radius: 0.375rem;
 }
 
 input{

@@ -15,7 +15,7 @@ export function OrderDetails() {
                         <p>R$ 9,90</p>
                     </div>
                     <div id="buttons">
-                        <InputNumber />
+                        <InputNumber variant="InputNumberOrder" />
                         <Button variant="ButtonDeletedCoffee" title="Remover" icon={<Trash size={16} color="#8047F8" />}
                         />
                     </div>

@@ -14,8 +14,10 @@ export function Card() {
             </InfoCoffee>
             <ButtonsCoffee>
                 <h2>R$ <strong>9,90</strong> </h2>
-                <InputNumber />
-                <button id="order-button"><ShoppingCartSimple size={24} color="#ffff" weight="fill" /></button>
+                <div>
+                    <InputNumber variant="InputNumberHome" />
+                    <button id="order-button"><ShoppingCartSimple size={24} color="#ffff" weight="fill" /></button>
+                </div>
             </ButtonsCoffee>
         </CardContainer>
     )

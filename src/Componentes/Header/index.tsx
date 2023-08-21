@@ -9,7 +9,7 @@ export function Header() {
                 <img src={LogoCoffeeDelivery} alt="" />
             </span>
             <nav>
-                <button> <MapPin size={22} color="#8047f8" weight="fill" />Porto Alegre, RS</button>
+                <button> <MapPin size={22} color="#8047f8" weight="fill" id="svg-map" />Porto Alegre, RS</button>
                 <NavLink to="/order" title="Pedido">
                     <ShoppingCartSimple size={22} color="#c47f17" weight="fill" />
                     <span>{2}</span>

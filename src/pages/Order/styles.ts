@@ -15,17 +15,13 @@ h2{
     color: ${props => props.theme.BACKGROUND_BASE_SUBTITLE};
 }
 
-
-
-@media(max-width:1400px){
+@media(max-width:1200px){
     flex-direction: column;
     align-items: center;
-    padding:1rem ;
 }
 `;
 
 export const BaseSection = styled.div`
-
 padding: 2.5rem;
 background-color:${props => props.theme.BACKGROUND_BASE_CARD};
 font-family: 'Roboto';
@@ -126,7 +122,6 @@ export const PaymentWrapper = styled(BaseSection)`
         display: flex;
         gap:0.75rem;
     }
-
 `;
 
 export const OrdersDetails = styled.div`
@@ -181,24 +176,32 @@ export const OrdersDetails = styled.div`
     font-weight: 700;
     line-height: 160%; 
     text-transform: uppercase;
+    transition: 200ms;
+    &:hover{
+        background-color:${props => props.theme.YELLOW_DARK}; 
+    }
 }
 `;
 
 export const Input = styled.input`
  font-family: 'Roboto';
-width: 100%;
-padding: 0.75rem;
-border: 1px solid ${props => props.theme.BACKGROUND_BASE_BUTTON};
-height:2.265rem;
-border-radius: 0.25rem;
-background-color:${props => props.theme.BACKGROUND_BASE_INPUT};
-::placeholder{
-    font-family: 'Roboto';
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 130%;
-    color: ${props => props.theme.BACKGROUND_BASE_LABEL};
-}
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid ${props => props.theme.BACKGROUND_BASE_BUTTON};
+    height:2.265rem;
+    border-radius: 0.25rem;
+    background-color:${props => props.theme.BACKGROUND_BASE_INPUT};
+    ::placeholder{
+        font-family: 'Roboto';
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 130%;
+        color: ${props => props.theme.BACKGROUND_BASE_LABEL};
+    }
+
+    &:focus{
+        border: 1px solid ${props => props.theme.YELLOW_DARK};
+    }
 `;
 
 

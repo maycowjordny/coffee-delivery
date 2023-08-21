@@ -22,7 +22,15 @@ nav{
         border-radius: 0.375rem; 
         background-color: ${props => props.theme.PURPLE_LIGHT};
         color: ${props => props.theme.PURPLE_DARK};
-    }
+        transition: 400ms;
+        &:hover{
+            color: ${props => props.theme.WHITE};
+            background-color: ${props => props.theme.PURPLE};
+            #svg-map path{
+                fill: ${props => props.theme.WHITE};
+            }
+        }
+        }
 
     a{
         position: relative;

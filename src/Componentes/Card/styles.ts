@@ -60,6 +60,11 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 
+div{
+    display: flex;
+    gap: 0.5rem;
+}
+
 h2{
     white-space: nowrap;
     font-family: 'Roboto';
@@ -81,11 +86,14 @@ strong{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem;
+    padding: 0.3rem;
     border: none;
-    gap: 0.5rem; 
     border-radius: 0.375rem;
-    background-color:${props => props.theme.PURPLE_DARK}; ;
+    background-color:${props => props.theme.PURPLE};
+    &:hover{
+        background-color:${props => props.theme.PURPLE_DARK};
+
+    }
 }
 `;
 

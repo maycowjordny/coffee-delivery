@@ -3,7 +3,7 @@ import { ButtonContainer } from "./styles"
 
 interface ButtonProps {
     variant?: any
-    title: string
+    title?: string
     icon?: ReactNode
     id?: string
 }

@@ -10,6 +10,12 @@ justify-content: space-between;
 gap: 3.5rem;
 color: ${props => props.theme.BACKGROUND_BASE_TITLE};
 
+@media(max-width:1200px){
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1rem;
+}
+
 .description h2{
     font-family:'Baloo 2';
     font-size: 3rem;

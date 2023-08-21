@@ -23,6 +23,15 @@ font-weight: 400;
 line-height: 160%; 
 text-transform: uppercase;
 width: ${props => props.variant == 'ButtonPayment' ? '11rem' : '5rem'};
-height: ${props => props.variant == 'ButtonPayment' ? '3rem' : '2rem'};; 
+height: ${props => props.variant == 'ButtonPayment' ? '3rem' : '2rem'};
+
+&:hover{
+    background-color: ${props => props.theme.BACKGROUND_BASE_HOVER};
+}
+
+&:focus{
+    border: ${props => props.variant == 'ButtonPayment' ? '1px solid #8047F8' : 'none'};
+    background-color: ${props => props.theme.BACKGROUND_BASE_HOVER};
+}
 `;
 
