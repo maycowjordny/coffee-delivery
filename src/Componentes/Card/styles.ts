@@ -6,29 +6,7 @@ height: 19.375rem;
 border-radius: 0.375rem 2.25rem;
 padding: 1.25rem;
 background-color: ${props => props.theme.BACKGROUND_BASE_CARD};
-`;
-
-export const InfoCoffee = styled.div`
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: center;
-text-align: center;
-
-span{
-    margin-top: 1rem;
-    font-family: 'Roboto';
-    font-size: 0.625rem;
-    font-weight: 700;
-    line-height: 130%; 
-    text-transform: uppercase;
-    padding: 0.25rem 0.5rem;
-    border-radius: 6.25rem;
-    background-color:${props => props.theme.YELLOW_LIGHT};
-    color: ${props => props.theme.YELLOW_DARK};
-    margin-bottom: 1rem;
-}
-
+text-align:center;
 img{
     width: 7.5rem;
     height: 7.5rem;
@@ -53,7 +31,16 @@ h1{
     color: ${props => props.theme.BACKGROUND_BASE_LABEL};
     margin-bottom:2rem;
 }
+
+.tags-wrapper{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
 `;
+
 
 export const ButtonsCoffee = styled.div`
 display: flex;

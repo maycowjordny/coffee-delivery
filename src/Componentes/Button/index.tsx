@@ -5,7 +5,6 @@ interface ButtonProps {
     variant?: any
     title?: string
     icon?: ReactNode
-    id?: string
 }
 
 export function Button(props: ButtonProps) {

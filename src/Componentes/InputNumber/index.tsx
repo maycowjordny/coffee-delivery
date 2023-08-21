@@ -5,8 +5,7 @@ import { useState } from "react"
 
 interface InputNumber {
     variant?: any
-    count: number
-
+    count?: number
 }
 
 export function InputNumber(props: InputNumber) {
