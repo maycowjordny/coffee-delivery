@@ -1,30 +1,28 @@
 import { Plus, Minus } from "phosphor-react";
 import { InputNumberContainer } from "./styles";
-import { useState } from "react"
 
-
-interface InputNumber {
+export interface InputNumberProps {
     variant?: any
-    count?: number
+    quantity: number
+    setQuantity: (newCount: number) => void
 }
 
-export function InputNumber(props: InputNumber) {
-
-    const [count, setCount] = useState(0)
+export function InputNumber(props: InputNumberProps) {
+    const { quantity, setQuantity } = props
 
     const handleCount = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newCount = parseInt(e.target.value)
-        setCount(newCount)
+        setQuantity(newCount)
     }
 
     function handleMinusCount() {
-        const newCount = count == 0 ? count : count - 1
-        setCount(newCount)
+        const newCount = quantity == 0 ? quantity : quantity - 1
+        setQuantity(newCount)
     }
 
     function handlePlusCount() {
-        const newCount = count + 1
-        setCount(newCount)
+        const newCount = quantity + 1
+        setQuantity(newCount)
     }
 
 
@@ -36,7 +34,7 @@ export function InputNumber(props: InputNumber) {
                     className="buttonInput" />
             </button>
             <input type="number"
-                value={count}
+                value={quantity}
                 onChange={handleCount}
                 readOnly
             />

@@ -74,7 +74,7 @@ export const Coffees = [
         tags: [{ id: 1, name: "Tradicional" }, { id: 2, name: "com leite" }],
         title: "Capuccino",
         description: "Bebida com canela feita de doses iguais de café, leite e espuma",
-        price: 9.909,
+        price: 9.90,
         quantity: 0
     },
     {

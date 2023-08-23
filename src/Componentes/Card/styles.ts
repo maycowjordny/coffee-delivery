@@ -44,7 +44,7 @@ h1{
 
 export const ButtonsCoffee = styled.div`
 display: flex;
-align-items: center;
+align-items: baseline;
 justify-content: space-between;
 
 div{
