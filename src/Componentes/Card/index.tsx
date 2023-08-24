@@ -2,7 +2,7 @@ import { CardContainer, ButtonsCoffee } from "./styles";
 import { ShoppingCartSimple } from "phosphor-react";
 import { InputNumber } from "../InputNumber";
 import { Tags, TagsCoffeeProps } from "../Tags";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { OrderContext } from "../../Context";
 
 export interface CardPropsCoffee {
@@ -35,12 +35,10 @@ export function Card(props: { data: CardPropsCoffee }) {
                 if (coffee.id === BuildCoffee.id) {
                     return { ...coffee, quantity: coffee.quantity += BuildCoffee.quantity }
                 }
-
                 return coffee
             })
 
             const coffeExisting = orders.coffees.some(coffee => coffee.id === BuildCoffee.id)
-            console.log(coffeExisting);
 
             if (!coffeExisting) {
                 updateCoffee.push(BuildCoffee)
@@ -65,6 +63,14 @@ export function Card(props: { data: CardPropsCoffee }) {
             setOrders(coffee)
         }
     }
+    useEffect(() => {
+        async function FetchOrder() {
+            const response = JSON.parse(localStorage.getItem("@coffees")!)
+            setOrders(response)
+        }
+        FetchOrder()
+    }, [])
+
     return (
         <CardContainer>
             <img src={props.data.image} alt="Imagem xícara de café" />

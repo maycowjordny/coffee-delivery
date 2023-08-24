@@ -2,8 +2,18 @@ import { Button } from "../../Componentes/Button";
 import { AddressAndPayment, AdressWrapper, Input, OrderContainer, OrdersDetails, PaymentWrapper } from "./styles";
 import { CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { OrderDetails } from "../../Componentes/OrderDetails"
+import { OrderContext } from "../../Context";
+import { useContext } from "react";
 
 export function Order() {
+
+  const { orders } = useContext(OrderContext)
+  const totalOrderAmount = orders ? orders.coffees.reduce((total, coffee) => total + coffee.price * coffee.quantity, 0) : 0
+  const deliveryValue = Math.floor(Math.random() * 10)
+  const totalOrderWithDelivery = (Number(totalOrderAmount) + Number(deliveryValue))
+
+  const validateAdreess = true
+
   return (
     <OrderContainer>
       <AddressAndPayment>
@@ -45,26 +55,39 @@ export function Order() {
       </AddressAndPayment>
       <OrdersDetails>
         <h2>Cafés selecionados</h2>
-        <div className="order-wrapper">
-          <OrderDetails />
-          <OrderDetails />
-          <OrderDetails />
-          <div className="payment-details">
-            <div>
-              <p>Total de itens </p>
-              <p>R$ 29,70 </p>
+        {
+          orders ?
+            <div className="order-wrapper">
+              {
+                orders.coffees.map(coffee => (
+                  <OrderDetails
+                    data={coffee}
+                    key={coffee.id}
+                  />
+                ))
+              }
+              <div className="payment-details">
+                <div>
+                  <p>Total de itens </p>
+                  <p>R$ {(totalOrderAmount!).toFixed(2)} </p>
+                </div>
+                {validateAdreess ?
+                  <div>
+                    <p>Entrega </p>
+                    <p>R${(deliveryValue).toFixed(2)}</p>
+                  </div>
+                  : null
+                }
+                <div>
+                  <strong>Total</strong>
+                  <strong>R${(orders.adreess ? totalOrderWithDelivery : totalOrderAmount).toFixed(2)}</strong>
+                </div>
+                <button id="button-confirm-order">confirmar pedido</button>
+              </div>
             </div>
-            <div>
-              <p>Entrega </p>
-              <p>R$ 3,50 </p>
-            </div>
-            <div>
-              <strong>Total</strong>
-              <strong>R$ 33,20</strong>
-            </div>
-            <button id="button-confirm-order">confirmar pedido</button>
-          </div>
-        </div>
+            :
+            null
+        }
       </OrdersDetails>
     </OrderContainer>
   )

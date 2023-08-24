@@ -1,15 +1,16 @@
 import { styled } from "styled-components";
 
 export const CardDetailsContainer = styled.div`
-width: 23rem;
-background-color: transparent;
 display: flex;
 flex-direction: column;
+align-items: center;
+padding: 0.5rem;
 gap: 1.25rem;
-margin-bottom: 1.5rem;
 
 .info-wrapper{
+    width: 23rem;
     display: flex;
+    justify-content: start;
     gap: 1.25rem;
 }
 img{
@@ -19,6 +20,7 @@ img{
 }
 
 .info-coffee{
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -26,17 +28,24 @@ img{
 
 #title-price{
     display: flex;
-    gap: 4rem;
-    white-space: nowrap;
-    text-align: left;
-    p{
+    justify-content: space-between;
+
+    span{
         color: ${props => props.theme.BACKGROUND_BASE_TEXT};
         font-family: 'Roboto';
         font-size: 1rem;
         font-weight: 700;
         line-height: 130%
     }
+
+    h2{
+        font-family: 'Roboto';
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 130%;
+    }
 }
+
 
 #buttons{
     display: flex;
@@ -49,6 +58,7 @@ img{
 }
 
 hr{
+    width: 23rem;
     border: 1px solid;
     color: ${props => props.theme.BACKGROUND_BASE_BUTTON};
 }

@@ -11,11 +11,11 @@ import { OrderContextProvider } from './Context';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={defaultThemes}>
-      <BrowserRouter>
-        <OrderContextProvider>
+      <OrderContextProvider>
+        <BrowserRouter>
           <Router />
-        </OrderContextProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </OrderContextProvider>
       <GlobalStyle />
     </ThemeProvider>
   </React.StrictMode>,

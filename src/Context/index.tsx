@@ -10,7 +10,7 @@ interface OrderContextType {
     setOrders: React.Dispatch<React.SetStateAction<OrderProps>>
 }
 
-interface OrderProps {
+export interface OrderProps {
     coffees: CardPropsCoffee[]
     adreess: any
     payment_method: string | null
@@ -29,6 +29,7 @@ export function OrderContextProvider({ children }: OrderContextProps) {
         }
         FetchOrder()
     }, [])
+
     return (
         <OrderContext.Provider value={{
             orders,

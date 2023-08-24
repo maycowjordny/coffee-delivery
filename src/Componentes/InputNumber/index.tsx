@@ -12,7 +12,7 @@ export function InputNumber(props: InputNumberProps) {
 
     const handleCount = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newCount = parseInt(e.target.value)
-        setQuantity(newCount)
+        setQuantity!(newCount)
     }
 
     function handleMinusCount() {

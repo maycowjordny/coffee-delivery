@@ -130,11 +130,15 @@ export const OrdersDetails = styled.div`
     gap: 1rem;
     height: 23rem;
     border-radius: 0.375rem;
-    max-width: 28rem;
+    width: 28rem;
     .order-wrapper{
         padding: 2.5rem;
         border-radius: 0.375rem 2.75rem;
         background-color:${props => props.theme.BACKGROUND_BASE_CARD};
+}
+
+.payment-details{
+    margin-top: 1.5rem;
 }
 
 .payment-details div{
