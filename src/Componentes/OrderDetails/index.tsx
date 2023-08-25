@@ -4,19 +4,14 @@ import { Button } from "../Button";
 import { Trash } from "phosphor-react";
 import { OrderContext } from "../../Context";
 import { useContext, useState } from "react";
+import { CardPropsCoffee } from "../Card";
 
-export interface OrderDetailsProps {
-    id: number
-    image: string,
-    title: string,
-    description: string
-    price: number
-    quantity: number
-}
 
-export function OrderDetails(props: { data: OrderDetailsProps }) {
-    const { orders } = useContext(OrderContext)
+
+export function OrderDetails(props: { data: CardPropsCoffee }) {
+    const { orders, setOrders } = useContext(OrderContext)
     const [newQuantity, setNewQuantity] = useState(props.data.quantity)
+
 
     const handleNewQuantity = (newVal: number) => {
         setNewQuantity(newVal)
@@ -29,8 +24,19 @@ export function OrderDetails(props: { data: OrderDetailsProps }) {
             }
             return coffee
         })
-        localStorage.setItem("@coffees", JSON.stringify({ coffees: newCoffee }));
+
+
+        localStorage.setItem("@coffees", JSON.stringify({ coffees: newCoffee, }));
+        setOrders({ ...orders, coffees: newCoffee });
     }
+
+    function handleDeleteCoffee(id: number) {
+        const coffeeDeleted = orders.coffees.filter(c => c.id != id)
+
+        localStorage.setItem("@coffees", JSON.stringify({ coffees: coffeeDeleted, }));
+        setOrders({ ...orders, coffees: coffeeDeleted });
+    }
+
     return (
         <CardDetailsContainer>
             <div className="info-wrapper" >
@@ -38,11 +44,11 @@ export function OrderDetails(props: { data: OrderDetailsProps }) {
                 <div className="info-coffee">
                     <div id="title-price">
                         <h2>{props.data.title}</h2>
-                        <span>R$ {(props.data.quantity * props.data.price).toFixed(2)}</span>
+                        <span>R$ {(newQuantity * props.data.price).toFixed(2)}</span>
                     </div>
                     <div id="buttons">
                         <InputNumber variant="InputNumberOrder" quantity={newQuantity} setQuantity={handleNewQuantity} />
-                        <Button variant="ButtonDeletedCoffee" title="Remover" icon={<Trash size={16} color="#8047F8" />}
+                        <Button variant="ButtonDeletedCoffee" onClick={() => handleDeleteCoffee(props.data.id)} title="Remover" icon={<Trash size={16} color="#8047F8" />}
                         />
                     </div>
                 </div>

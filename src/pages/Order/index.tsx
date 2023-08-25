@@ -3,13 +3,14 @@ import { AddressAndPayment, AdressWrapper, Input, OrderContainer, OrdersDetails,
 import { CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { OrderDetails } from "../../Componentes/OrderDetails"
 import { OrderContext } from "../../Context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export function Order() {
 
-  const { orders } = useContext(OrderContext)
-  const totalOrderAmount = orders ? orders.coffees.reduce((total, coffee) => total + coffee.price * coffee.quantity, 0) : 0
+  const { orders, setOrders } = useContext(OrderContext)
+
   const deliveryValue = Math.floor(Math.random() * 10)
+  const totalOrderAmount = orders ? orders.coffees.reduce((total, coffee) => total + coffee.price * coffee.quantity, 0) : 0
   const totalOrderWithDelivery = (Number(totalOrderAmount) + Number(deliveryValue))
 
   const validateAdreess = true
@@ -69,7 +70,7 @@ export function Order() {
               <div className="payment-details">
                 <div>
                   <p>Total de itens </p>
-                  <p>R$ {(totalOrderAmount!).toFixed(2)} </p>
+                  <p>R$ {(totalOrderAmount).toFixed(2)} </p>
                 </div>
                 {validateAdreess ?
                   <div>
@@ -80,7 +81,7 @@ export function Order() {
                 }
                 <div>
                   <strong>Total</strong>
-                  <strong>R${(orders.adreess ? totalOrderWithDelivery : totalOrderAmount).toFixed(2)}</strong>
+                  <strong>R${(totalOrderWithDelivery).toFixed(2)}</strong>
                 </div>
                 <button id="button-confirm-order">confirmar pedido</button>
               </div>

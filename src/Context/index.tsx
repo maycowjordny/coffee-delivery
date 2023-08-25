@@ -22,6 +22,8 @@ export function OrderContextProvider({ children }: OrderContextProps) {
 
     const [orders, setOrders] = useState<OrderProps>({ coffees: [], adreess: null, payment_method: null })
 
+
+
     useEffect(() => {
         async function FetchOrder() {
             const response = JSON.parse(localStorage.getItem("@coffees")!)

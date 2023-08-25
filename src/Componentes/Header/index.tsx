@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { OrderContext } from "../../Context";
 export function Header() {
     const { orders } = useContext(OrderContext)
-    /*  const coffees = orders.coffees.map(c => c.quantity) */
+
     return (
         < HeaderContainer >
             <span>
@@ -18,7 +18,7 @@ export function Header() {
                     <ShoppingCartSimple size={22} color="#c47f17" weight="fill" />
                     {
                         orders ?
-                            <span>1</span>
+                            <span>{orders.coffees.length}</span>
                             : null
                     }
                 </NavLink>

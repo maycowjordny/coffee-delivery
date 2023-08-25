@@ -5,6 +5,7 @@ interface ButtonProps {
     variant?: any
     title?: string
     icon?: ReactNode
+    onClick: () => void
 }
 
 export function Button(props: ButtonProps) {
