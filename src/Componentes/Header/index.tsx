@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { OrderContext } from "../../Context";
 export function Header() {
     const { orders } = useContext(OrderContext)
-
+    const coffeeList = orders.coffees.length
     return (
         < HeaderContainer >
             <span>
@@ -17,9 +17,7 @@ export function Header() {
                 <NavLink to="/order" title="Pedido">
                     <ShoppingCartSimple size={22} color="#c47f17" weight="fill" />
                     {
-                        orders ?
-                            <span>{orders.coffees.length}</span>
-                            : null
+                        orders.coffees.length == 0 ? null : <span> {coffeeList}</span>
                     }
                 </NavLink>
             </nav>

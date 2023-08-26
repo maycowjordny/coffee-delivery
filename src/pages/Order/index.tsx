@@ -9,7 +9,7 @@ export function Order() {
 
   const { orders, setOrders } = useContext(OrderContext)
 
-  const deliveryValue = Math.floor(Math.random() * 10)
+  const deliveryValue = 5
   const totalOrderAmount = orders ? orders.coffees.reduce((total, coffee) => total + coffee.price * coffee.quantity, 0) : 0
   const totalOrderWithDelivery = (Number(totalOrderAmount) + Number(deliveryValue))
 
