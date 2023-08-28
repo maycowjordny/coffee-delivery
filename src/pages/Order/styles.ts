@@ -15,6 +15,16 @@ h2{
     color: ${props => props.theme.BACKGROUND_BASE_SUBTITLE};
 }
 
+input[type=number]::-webkit-inner-spin-button { 
+        -webkit-appearance: none;
+    }
+
+      input[type=number] { 
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+
+
 @media(max-width:1200px){
     flex-direction: column;
     align-items: center;
@@ -31,14 +41,16 @@ export const AddressAndPayment = styled.div`
     max-width: 35rem;
 `;
 
-export const AdressWrapper = styled(BaseSection)`
+export const AdressWrapper = styled.form`
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin: 1rem 0 0 0;
-    height: 23rem;
+    min-height: 23rem;
     border-radius: 0.375rem;
-    
+    padding: 2.5rem;
+    background-color:${props => props.theme.BACKGROUND_BASE_CARD};
+    font-family: 'Roboto';
     .title{
         display: flex;
         gap:0.5rem;
@@ -65,25 +77,35 @@ export const AdressWrapper = styled(BaseSection)`
         }
     }
 
-    div:nth-child(4){
+  #number-complement{
         display: flex;
         gap: 0.75rem;
     }
-    div:nth-child(5){
+  #neighborhood-city-uf{
         display: flex;
         gap: 0.75rem;
+    }
+
+    #neighborhood,#number{
+        width: 12.5rem;
     }
 
     #complement{
-        width: 220%;
+      width: 16.75rem;
     }
 
     #state{
-        width: 20%;
+       width: 4rem;
     }
     #city{
-        width: 180%;
+        width: 12rem;
     }
+`;
+
+export const Error = styled.span`
+color: red;
+font-size: 0.8rem;
+font-family: 'Roboto';
 `;
 
 export const PaymentWrapper = styled(BaseSection)`
@@ -188,7 +210,7 @@ export const OrdersDetails = styled.div`
 `;
 
 export const Input = styled.input`
- font-family: 'Roboto';
+    font-family: 'Roboto';
     width: 100%;
     padding: 0.75rem;
     border: 1px solid ${props => props.theme.BACKGROUND_BASE_BUTTON};
@@ -203,14 +225,7 @@ export const Input = styled.input`
         color: ${props => props.theme.BACKGROUND_BASE_LABEL};
     }
 
-    &:focus{
-        border: 1px solid ${props => props.theme.YELLOW_DARK};
-    }
+
+
 `;
-
-
-
-
-
-
 

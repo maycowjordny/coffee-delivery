@@ -2,8 +2,10 @@ import { InfoOrderConfirmation, OrderConfirmationContainer } from "./styles";
 import imgConfirmation from "../../assets/Illustration.svg"
 import { Points } from "../Home/styles";
 import { MapPin, Timer, CurrencyDollar } from "phosphor-react";
-
+import { OrderContext } from "../../Context";
+import { useContext } from "react"
 export function OrderConfirmation() {
+    const { orders } = useContext(OrderContext)
     return (
         <OrderConfirmationContainer>
             <InfoOrderConfirmation>
@@ -32,7 +34,6 @@ export function OrderConfirmation() {
                         </div>
                     </div>
                 </div>
-
             </InfoOrderConfirmation>
             <img src={imgConfirmation} alt="imagem de uma moto de um entregador" />
         </OrderConfirmationContainer>

@@ -63,13 +63,6 @@ export function Card(props: { data: CardPropsCoffee }) {
             setOrders(coffee)
         }
     }
-    useEffect(() => {
-        async function FetchOrder() {
-            const response = JSON.parse(localStorage.getItem("@coffees")!)
-            setOrders(response)
-        }
-        FetchOrder()
-    }, [])
 
     return (
         <CardContainer>
@@ -98,7 +91,10 @@ export function Card(props: { data: CardPropsCoffee }) {
                         quantity={quantity}
                         setQuantity={setQuantity}
                     />
-                    <button id="order-button" onClick={() => handleCreateOrder(props.data)} ><ShoppingCartSimple size={24} color="#ffff" weight="fill" /></button>
+                    <button id="order-button"
+                        onClick={() => handleCreateOrder(props.data)}>
+                        <ShoppingCartSimple size={24} color="#ffff" weight="fill" />
+                    </button>
                 </div>
             </ButtonsCoffee>
         </CardContainer>

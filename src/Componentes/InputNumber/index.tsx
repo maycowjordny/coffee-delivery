@@ -25,14 +25,22 @@ export function InputNumber(props: InputNumberProps) {
         setQuantity(newCount)
     }
 
-
     return (
         <InputNumberContainer variant={props.variant}>
-            <button>
-                <Minus size={16} color="#8047F8" weight="bold"
-                    onClick={handleMinusCount}
-                    className="buttonInput" />
-            </button>
+            {
+                quantity == 1 ?
+                    <button disabled>
+                        <Minus size={16} color="#c9c2c2" weight="bold"
+                            onClick={handleMinusCount}
+                            className="buttonInput" />
+                    </button>
+                    :
+                    <button>
+                        <Minus size={16} color="#8047F8" weight="bold"
+                            onClick={handleMinusCount}
+                            className="buttonInput" />
+                    </button>
+            }
             <input type="number"
                 value={quantity}
                 onChange={handleCount}
@@ -43,6 +51,8 @@ export function InputNumber(props: InputNumberProps) {
                     onClick={handlePlusCount}
                     className="buttonInput" />
             </button>
+
+
         </InputNumberContainer>
     )
 }

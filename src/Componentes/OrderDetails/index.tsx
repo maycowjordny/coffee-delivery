@@ -38,7 +38,6 @@ export function OrderDetails(props: { data: CardPropsCoffee }) {
 
     useEffect(() => {
         if (newQuantity == 0) {
-            confirm("Deseja retirar este café do seu pedido")
             const coffeeDeleted = orders.coffees.filter(coffee => coffee.quantity !== 0)
             localStorage.setItem("@coffees", JSON.stringify({ coffees: coffeeDeleted }));
             setOrders({ ...orders, coffees: coffeeDeleted, });
