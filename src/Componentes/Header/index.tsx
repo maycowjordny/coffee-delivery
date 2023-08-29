@@ -17,7 +17,7 @@ export function Header() {
                 <NavLink to="/order" title="Pedido">
                     <ShoppingCartSimple size={22} color="#c47f17" weight="fill" />
                     {
-                        orders ?
+                        coffees ?
                             <span>{coffees}</span>
                             :
                             null

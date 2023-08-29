@@ -26,8 +26,10 @@ export function OrderContextProvider({ children }: OrderContextProps) {
 
     useEffect(() => {
         async function FetchOrder() {
-            const response = JSON.parse(localStorage.getItem("@coffees")!)
-            setOrders(response)
+            if (orders) {
+                const response = JSON.parse(localStorage.getItem("@coffees")!)
+                setOrders(response)
+            }
         }
         FetchOrder()
     }, [])

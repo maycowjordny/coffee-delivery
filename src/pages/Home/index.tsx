@@ -43,7 +43,6 @@ export function Home() {
       </AboutCoffeeDelivery>
       <Menu>
         <div className="title">
-
           <h2>Nossos cafés</h2>
         </div>
         <section>
