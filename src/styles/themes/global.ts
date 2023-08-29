@@ -28,4 +28,10 @@ a{
     color:${props => props.theme.BACKGROUND_BASE_TEXT};
 }
 
+@media(max-width:700px){
+
+html{
+    font-size: 87.5%;
+}
+}
 `;

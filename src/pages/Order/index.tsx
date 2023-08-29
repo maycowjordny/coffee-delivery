@@ -53,6 +53,7 @@ export function Order() {
     if (orders.payment_method == null) {
       return alert("Selecione uma forma de pagamento")
     }
+    localStorage.setItem("@coffees", JSON.stringify({ ...orders, adreess: data }));
     setOrders({ ...orders, adreess: data })
     navigate('/orderconfirmation')
     reset()
