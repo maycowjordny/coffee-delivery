@@ -33,7 +33,6 @@ export function Order() {
   const deliveryValue = 5
   const totalOrderAmount = orders ? orders.coffees.reduce((total, coffee) => total + coffee.price * coffee.quantity, 0) : 0
   const totalOrderWithDelivery = (Number(totalOrderAmount) + Number(deliveryValue))
-  const validateAdreess = true
   const FormAdreess = useForm<AdreessFormData>({
     resolver: zodResolver(AdreessFormValidationSchema),
     defaultValues: {
@@ -226,13 +225,10 @@ export function Order() {
                   <p>Total de itens </p>
                   <p>R$ {(totalOrderAmount).toFixed(2)} </p>
                 </div>
-                {validateAdreess ?
-                  <div>
-                    <p>Entrega </p>
-                    <p>R${(deliveryValue).toFixed(2)}</p>
-                  </div>
-                  : null
-                }
+                <div>
+                  <p>Entrega </p>
+                  <p>R${(deliveryValue).toFixed(2)}</p>
+                </div>
                 <div>
                   <strong>Total</strong>
                   <strong>R${(totalOrderWithDelivery).toFixed(2)}</strong>
