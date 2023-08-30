@@ -1,5 +1,13 @@
 import { Button } from "../../Componentes/Button";
-import { AddressAndPayment, AdressWrapper, Input, OrderContainer, OrdersDetails, PaymentWrapper, Error } from "./styles";
+import {
+  AddressAndPayment,
+  AdressWrapper,
+  Input,
+  OrderContainer,
+  OrdersDetails,
+  PaymentWrapper,
+  Error
+} from "./styles";
 import { CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { OrderDetails } from "../../Componentes/OrderDetails"
 import { OrderContext } from "../../Context";
@@ -8,7 +16,6 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as zod from "zod"
 import { useNavigate } from "react-router-dom";
-
 
 const AdreessFormValidationSchema = zod.object({
   CEP: zod.number({
@@ -57,7 +64,6 @@ export function Order() {
     navigate('/orderconfirmation')
     reset()
   }
-
 
   const handlePaymentOptionClick = (paymentOption: string) => {
     let updatedPaymentMethod;

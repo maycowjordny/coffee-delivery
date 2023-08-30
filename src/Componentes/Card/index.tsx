@@ -1,19 +1,10 @@
 import { CardContainer, ButtonsCoffee } from "./styles";
 import { ShoppingCartSimple } from "phosphor-react";
 import { InputNumber } from "../InputNumber";
-import { Tags, TagsCoffeeProps } from "../Tags";
+import { Tags } from "../Tags";
 import { useState, useContext } from "react";
 import { OrderContext } from "../../Context";
-
-export interface CardPropsCoffee {
-    id: number
-    image: string,
-    tags: TagsCoffeeProps[],
-    title: string,
-    description: string
-    price: number
-    quantity: number
-}
+import { CardPropsCoffee } from "../../interfaces";
 
 export function Card(props: { data: CardPropsCoffee }) {
     const { orders, setOrders } = useContext(OrderContext)

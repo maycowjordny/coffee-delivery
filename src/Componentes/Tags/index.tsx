@@ -1,9 +1,5 @@
 import { TagsContainer } from "./styles";
-
-export interface TagsCoffeeProps {
-    id: number,
-    name: string,
-}
+import { TagsCoffeeProps } from "../../interfaces";
 
 export function Tags(props: TagsCoffeeProps) {
     return (

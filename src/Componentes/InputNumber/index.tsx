@@ -1,11 +1,6 @@
 import { Plus, Minus } from "phosphor-react";
 import { InputNumberContainer } from "./styles";
-
-export interface InputNumberProps {
-    variant?: any
-    quantity: number
-    setQuantity: (newCount: number) => void
-}
+import { InputNumberProps } from "../../interfaces";
 
 export function InputNumber(props: InputNumberProps) {
     const { quantity, setQuantity } = props

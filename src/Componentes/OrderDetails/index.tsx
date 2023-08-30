@@ -4,9 +4,7 @@ import { Button } from "../Button";
 import { Trash } from "phosphor-react";
 import { OrderContext } from "../../Context";
 import { useContext, useEffect, useState } from "react";
-import { CardPropsCoffee } from "../Card";
-
-
+import { CardPropsCoffee } from "../../interfaces";
 
 export function OrderDetails(props: { data: CardPropsCoffee }) {
     const { orders, setOrders } = useContext(OrderContext)

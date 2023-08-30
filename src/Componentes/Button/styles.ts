@@ -1,8 +1,5 @@
 import { styled } from "styled-components";
-
-interface ButtonContainerProps {
-    variant: 'ButtonPayment' | 'ButtonDeletedCoffee'
-}
+import { ButtonContainerProps } from "../../interfaces";
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
 display: flex;

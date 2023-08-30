@@ -5,11 +5,7 @@ import { MapPin, ShoppingCartSimple } from "phosphor-react";
 import { useContext, useEffect, useState } from "react";
 import { OrderContext } from "../../Context";
 import axios from "axios";
-
-interface locationProps {
-    city: string
-    UF: string
-}
+import { locationProps } from "../../interfaces";
 
 export function Header() {
     const { orders } = useContext(OrderContext)

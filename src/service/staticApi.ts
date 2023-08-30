@@ -12,7 +12,6 @@ import imgCoffee12 from "../assets/Image12.svg"
 import imgCoffee13 from "../assets/Image13.svg"
 import imgCoffee14 from "../assets/Image14.svg"
 
-
 export const Coffees = [
     {
         id: 1,
