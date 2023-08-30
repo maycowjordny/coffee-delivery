@@ -2,7 +2,7 @@ import { CardContainer, ButtonsCoffee } from "./styles";
 import { ShoppingCartSimple } from "phosphor-react";
 import { InputNumber } from "../InputNumber";
 import { Tags, TagsCoffeeProps } from "../Tags";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { OrderContext } from "../../Context";
 
 export interface CardPropsCoffee {
